@@ -1,13 +1,17 @@
 *{
-    padding: 0%;
-    margin: 0%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
+
 #banner{
     display: block;
     margin-bottom: 84px;
 }
 #banner img{
+    display: block;
     width: 100%;
+    height: auto;
 }
 .myHeader{
     padding-top: 27px;
@@ -16,21 +20,17 @@
     text-align: center;
 }
 .section2{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
 }
 img{
     max-width: 100%;
 }
-.puppy1,
-.Missingpuppy,
-.puppy2{
-    width: 34% 33% 33%;
-}
-
-.puppy1 img,
-.Missingpuppy img,
-.puppy2 img{
+.section2 img{
+    display: block;
     width: 100%;
+    height: auto;
 }
 
 .BlueBG{
@@ -39,10 +39,12 @@ img{
 
 
 .more-puppies-wrapper{
-display: flex; 
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
 }
 .additional-puppies{
-margin-top: 50px;
+    margin-top: 50px;
 }
 .additional-puppies h2{
     text-align: center;
@@ -62,17 +64,63 @@ margin-top: 50px;
 .Missingpuppy{
     background-color: #f04d65;
     color: black;
-    margin: 0 1%;
-    
+    display: grid;
+    place-items: center;
 }
 .missing-wrapper{
-    font-size: 60px;
-    padding: 86px 50px 45px;
+    font-size: 42px;
+    padding: 24px;
     text-align: center;
 }
-.vertical-puppy-1{
-    margin-left: 20px;
+
+.more-puppies-wrapper img{
+    display: block;
+    width: 100%;
+    height: auto;
 }
-.vertical-puppy-2{
-    margin-left: 20px;
+
+@media (max-width: 767px){
+    #banner{
+        margin-bottom: 40px;
+    }
+
+    .Missingpuppy{
+        display: none;
+    }
+
+    .section2{
+        grid-template-columns: 1fr;
+    }
+
+    .missing-wrapper{
+        font-size: 32px;
+        padding: 32px 20px;
+    }
+
+    .additional-puppies h2{
+        font-size: 32px;
+        margin-bottom: 28px;
+        margin-top: 36px;
+    }
+
+    .more-puppies-wrapper{
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .footer-wrapper{
+        margin-top: 48px;
+        padding: 64px 16px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px){
+    .myHeader{
+        padding: 22px 12px;
+    }
+
+    .myHeader h1{
+        font-size: 28px;
+    }
 }
